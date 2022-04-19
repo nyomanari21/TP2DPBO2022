@@ -4,7 +4,13 @@ class Pengurus extends DB{
 
     // Mengambil data pengurus
     function getPengurus(){
-        $query = "SELECT * FROM pengurus";
+        $query = "SELECT * FROM pengurus JOIN bidang_divisi ON pengurus.id_bidang=bidang_divisi.id_bidang ORDER BY pengurus.nim";
+        return $this->execute($query);
+    }
+
+    function getPengurusJoin(){
+        $query = "SELECT * FROM pengurus JOIN divisi ON pengurus.divisi_id=divisi.divisi_id JOIN jabatan ON pengurus.jabatan_id=jabatan.jabatan_id ORDER BY pengurus.pengurus_id";
+
         return $this->execute($query);
     }
 

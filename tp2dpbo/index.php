@@ -63,29 +63,31 @@ if(!$result){
 
     <!-- Data Pengurus -->
     <section id="card-pengurus">
-    <?php
-    
-    echo "<div class='container my-5'";
-    echo "<p><h2 class='text-center'>Pengurus</h2></p>";
+        <?php
+        
+        echo "<div class='container my-5'";
+        echo "<p><h2 class='text-center'>Pengurus</h2></p>";
 
-    // Grid
-    echo "<div class='row row-cols-3'";
-    // Card Pengurus
-    while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
-        echo "<div class='col'>";
-            echo "<div class='card'>";
-                echo "<div class='card-body'>";
-                    echo "<a href='index.php'><img src='images/{$row['foto']}' class='img-fluid' style='width:100%'></a>";
-                    echo "<h5 class='card-title text-center'> {$row['nama']} </h5>";
-                    echo "<p class='card-text text-center'> Jabatan </p>";
+        // Grid
+            echo "<div class='row row-cols-3'";
+        // Card Pengurus
+                echo "<div class='col'>";
+        while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+            
+                echo "<div class='card mb-3'>";
+                    echo "<div class='card-body'>";
+                        echo "<a href='index.php'><img src='images/{$row['foto']}' class='img-fluid' style='width:100%'></a>";
+                        echo "<h5 class='card-title text-center'> {$row['nama']} </h5>";
+                        echo "<p class='card-text text-center'> {$row['jabatan']} </p>";
+                    echo "</div>";
+                echo "</div>";
+            
+        }
                 echo "</div>";
             echo "</div>";
         echo "</div>";
-    }
-    echo "</div>";
-    echo "</div>";
 
-    ?>
+        ?>
     </section>
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
